@@ -4,6 +4,12 @@ machine:
   node:
     version: 4.0.0
 
+
+jobs:
+  build:
+    docker:
+      — image: circleci/node:10
+
 database:
   pre:
     - sudo service mongodb stop
