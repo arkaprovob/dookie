@@ -74,6 +74,7 @@ function push(uri, data, options) {
     for (const collection in data) {
       let docs = data[collection];
       if (docs.length === 0) {
+        promises.push(db.createCollection(collection));
         continue;
       }
       for (let i = 0; i < docs.length; ++i) {
